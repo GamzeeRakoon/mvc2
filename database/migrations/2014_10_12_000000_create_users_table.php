@@ -9,12 +9,13 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    publ
+ic function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('firstname');
-            $table->string('lastname');
+            $table->string('firstname')->nullable();
+            $table->string('lastname')->nullable();
             $table->string('email')->unique();
             $table->string('password');
             $table->boolean("admin")->default(false);

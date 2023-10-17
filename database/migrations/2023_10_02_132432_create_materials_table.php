@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->integer('supply')->unsigned();
             $table->string('brand')->nullable();
+            $table->string('image_path')->nullable();
             $table->bigInteger('category_id')->unsigned();
             $table->timestamps();
         });

@@ -11,16 +11,16 @@
     @livewireStyles
 </head>
 <body class="flex flex-col h-full">
-    <livewire:nav/>
-    <div class="flex flex-row h-full">
-        <div class="flex flex-col h-full">
-            <livewire:category/>
-        </div>
-
-        <div class="flex flex-col w-full gap-4 bg-neutral-800">
-        <livewire:materials />
-        </div>
+<livewire:nav/>
+<div class="flex flex-row h-full">
+    <div class="flex flex-col h-full">
+        <livewire:category/>
     </div>
+
+    <div class="flex flex-col w-full gap-4 bg-neutral-800">
+        <livewire:materials />
+    </div>
+</div>
 
 </body>
 @livewireScripts
