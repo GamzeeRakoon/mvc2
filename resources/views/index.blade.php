@@ -10,8 +10,16 @@
 
     @livewireStyles
 </head>
-<body class="flex flex-col h-full">
-<livewire:nav/>
+<body class="flex flex-col h-full text-white">
+@if(Auth::guest())
+    <livewire:welcome.navigation/>
+
+@else
+    @auth
+        <livewire:layout.navigation/>
+    @endauth
+@endif
+
 <div class="flex flex-row h-full">
     <div class="flex flex-col h-full">
         <livewire:category/>
