@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\Category;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
@@ -15,16 +16,18 @@ class MaterialsFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition(): array
+    public function definition()
     {
+        $categoryIds = Category::pluck('id')->toArray();
+
         return [
-            'name' => fake()->uuid(),
-            'supply' => fake()->numberBetween(0,25),
-            'brand' => fake()->company(),
+            'name' => $this->faker->uuid(),
+            'supply' => $this->faker->numberBetween(0, 25),
+            'brand' => $this->faker->company(),
             'image_path' => null,
-            'category_id' => fake()->numberBetween(1,10),
+            'category_id' => $this->faker->randomElement($categoryIds),
             'created_at' => Carbon::now(),
-            'updated_at' => now()
+            'updated_at' => Carbon::now()
         ];
     }
 }
