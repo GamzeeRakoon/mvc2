@@ -26,9 +26,7 @@
     </div>
 
     <div class="flex flex-col w-full gap-4 bg-neutral-800">
-        @if ($categor == null)
-
-        @endif
+        <livewire:materials :resultId="$resultId"/>
     </div>
 </div>
 

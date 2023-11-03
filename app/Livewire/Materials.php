@@ -14,7 +14,9 @@ class Materials extends Component
     public function mount($resultId)
     {
         $this->resultId = $resultId;
+        $this->materials = Materials::all();
         $this->materials = app(MaterialController::class)->getMaterials();
+
     }
 
     public function render()
