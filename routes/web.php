@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\MaterialController;
+use App\Livewire\Materials;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,8 +26,8 @@ Route::view('profile', 'profile')
     ->middleware(['auth'])
     ->name('profile');
 
-Route::view('Bundled-Tools', 'index');
-//Route::get('Video Tools', [CategoryController::class, 'getId'])->name('video_tools');
+Route::get('{categoryButton}/{CategoryId}', [MaterialController::class, 'load'])
+    ->name('cat.give');
 
 
 require __DIR__.'/auth.php';

@@ -12,7 +12,7 @@ class Materials extends Model
 
     protected $table = 'materials';
 
-    public function category(): BelongsTo
+    public function materials(): BelongsTo
     {
         return $this->belongsTo(Category::class);
     }

@@ -2,18 +2,19 @@
 
 namespace App\Livewire;
 
+use App\Http\Controllers\MaterialController;
 use App\Models\Material;
 use Livewire\Component;
 
 class Materials extends Component
 {
-    public $materials = []; // Initialize $materials as an empty array
-    public $selectedCategoryId;
+    public $materials;
+    public $resultId;
 
-    public function selectCategory($categoryId)
+    public function mount($resultId)
     {
-        $this->selectedCategoryId = $categoryId;
-        $this->materials = Material::where('category_id', $categoryId)->get();
+        $this->resultId = $resultId;
+        $this->materials = app(MaterialController::class)->getMaterials();
     }
 
     public function render()

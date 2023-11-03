@@ -12,7 +12,7 @@ class Category extends Model
 
     protected $table = 'categories';
 
-    public function materials(): HasMany
+    public function category(): HasMany
     {
         return $this->hasMany(Materials::class);
     }
