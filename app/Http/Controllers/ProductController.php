@@ -24,17 +24,17 @@ class ProductController extends Controller
         return $cleanedUrl;
     }
 
-    public function load($categoryButton = null, $CategoryId = null)
+    public function load($cleanedUrl = null, $productId = null)
     {
-        if ($categoryButton !== null && $CategoryId !== null) {
-            $resultId = $CategoryId;
-            $resultButton = $categoryButton;
+        if ($cleanedUrl !== null && $productId !== null) {
+            $resultProductId = $productId;
+            $resultUrl = $cleanedUrl;
         } else {
-            $resultId = '0';
-            $resultButton = 'home';
+            $resultProductId = '0';
+            $resultUrl = '/';
         }
 
-        return view('index', compact('resultId', 'categoryButton'));
+        return view('index', compact('resultProductId', 'resultUrl'));
     }
 
 }

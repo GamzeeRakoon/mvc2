@@ -13,12 +13,14 @@ class Materials extends Component
     public $materials;
     public $resultId;
     public $cleanedUrl;
+    public $urlHasProduct;
 
     public function mount()
     {
         $this->cleanedUrl = app(ProductController::class)->cleanUrl();
         $this->materials = app(MaterialController::class)->getMaterials();
     }
+
 
     public function render()
     {

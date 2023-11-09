@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\IndexController;
 use App\Http\Controllers\MaterialController;
 use App\Http\Controllers\ProductController;
 use App\Livewire\Materials;
@@ -17,8 +18,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [MaterialController::class, 'load'])
-    ->name('home');
+Route::get('/', [IndexController::class, 'index'])->name('index');
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])

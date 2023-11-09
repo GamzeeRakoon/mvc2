@@ -17,8 +17,20 @@ class MaterialController extends Controller
         return $materials;
     }
 
+    public function cleanUrl()
+    {
+        $url = url()->current();
+
+        $baseUrl = url('/');
+        $cleanedUrl = str_replace($baseUrl, '', $url);
+
+        return $cleanedUrl;
+    }
+
     public function load($categoryButton = null, $CategoryId = null)
     {
+        $cleanedUrl = $this->cleanUrl();
+
         if ($categoryButton !== null && $CategoryId !== null) {
             $resultId = $CategoryId;
             $resultButton = $categoryButton;
@@ -27,6 +39,6 @@ class MaterialController extends Controller
             $resultButton = 'home';
         }
 
-        return view('index', compact('resultId', 'categoryButton'));
+        return view('index', compact('cleanedUrl', 'resultId', 'categoryButton'));
     }
 }
