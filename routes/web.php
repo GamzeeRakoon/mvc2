@@ -31,8 +31,7 @@ Route::view('profile', 'profile')
 Route::get('{categoryButton}/{CategoryId}', [MaterialController::class, 'load'])
     ->name('cat.give');
 
-Route::get('{$cleanedUrl}/{productId}', [ProductController::class, 'load'])
+Route::get('{cleanedUrl}/{productId}', [ProductController::class, ''])
     ->name('prod.give');
-
 
 require __DIR__.'/auth.php';
