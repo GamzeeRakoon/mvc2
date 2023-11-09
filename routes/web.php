@@ -31,7 +31,7 @@ Route::view('profile', 'profile')
 Route::get('{categoryButton}/{CategoryId}', [MaterialController::class, 'load'])
     ->name('cat.give');
 
-Route::get('{$url/{productId}', [MaterialController::class, 'loadMaterial'])
+Route::get('{$cleanedUrl}/{productId}', [ProductController::class, 'load'])
     ->name('prod.give');
 
 

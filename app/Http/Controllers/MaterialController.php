@@ -12,7 +12,11 @@ class MaterialController extends Controller
     public function getUrl()
     {
         $url = url()->current();
-        return $url;
+
+        $baseUrl = url('/');
+        $cleanedUrl = str_replace($baseUrl, '', $url);
+
+        return $cleanedUrl;
     }
 
     public function getMaterials()
@@ -22,23 +26,12 @@ class MaterialController extends Controller
         return $materials;
     }
 
-    // public function loadMaterial($productId)
-    // {
-    //     $this->getMaterials();
-    //     $this->getUrl();
-
-    //     $material = Material::find($productId);
-
-    //     return view('') $productId;
-    // }
-
     public function load($categoryButton = null, $CategoryId = null)
     {
         if ($categoryButton !== null && $CategoryId !== null) {
             $resultId = $CategoryId;
             $resultButton = $categoryButton;
         } else {
-
             $resultId = '0';
             $resultButton = 'home';
         }

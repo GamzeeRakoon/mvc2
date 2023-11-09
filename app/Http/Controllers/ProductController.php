@@ -6,10 +6,9 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function getUrl($ProductId)
+    public function load()
     {
-        $url = url()->current();
-        return $url;
-    }
 
+        return view('livewire.product');
+    }
 }

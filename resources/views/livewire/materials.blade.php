@@ -8,4 +8,5 @@
             </a>
         @endif
     @endforeach
+    {{$url}}
 </div>
