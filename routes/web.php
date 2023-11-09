@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\MaterialController;
+use App\Http\Controllers\ProductController;
 use App\Livewire\Materials;
 use Illuminate\Support\Facades\Route;
 
@@ -29,6 +30,9 @@ Route::view('profile', 'profile')
 
 Route::get('{categoryButton}/{CategoryId}', [MaterialController::class, 'load'])
     ->name('cat.give');
+
+Route::get('{$url/{productId}', [MaterialController::class, 'loadMaterial'])
+    ->name('prod.give');
 
 
 require __DIR__.'/auth.php';
